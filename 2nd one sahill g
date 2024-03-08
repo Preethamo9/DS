@@ -1,0 +1,61 @@
+#include<stdio.h>
+void read_string();
+void pattern_string();
+char str[100],pat[100],rep[100],ans[100];
+int i,j,k,c,m,flag=0;
+
+
+int main(){
+    read_string();
+ pattern_string();
+return;
+}
+void read_string()
+{
+printf("\n Enter main String :");
+gets(str);
+printf("\n Enter pattern String :");
+gets(pat);
+printf("\n Enter Replace String :");
+gets(rep);
+}
+void pattern_string()
+{
+    i=j=m=c=0;
+    while(str[c]!='\0')
+    {
+
+        if(str[m]==pat[i])
+        {
+            i++;
+            m++;
+        flag=1;
+        if(pat[i]=='\0')
+        {
+         for(k=0;rep[k]!='\0';k++,j++)
+            ans[j]=rep[k];
+         i=0;
+         c=m;
+        }
+        }
+    else{
+       ans[j]=str[c];
+       j++;
+       c++;
+       m=c;
+       i=0;
+        }
+    }
+    if(flag=0)
+    {
+
+        printf("patter not foumd");
+
+    }
+    else{
+        ans[j]='\0';
+        printf("\n the resudgdd   :%s \n",ans);
+
+    }
+
+}
